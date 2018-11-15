@@ -59,8 +59,8 @@ RUN apt install -y tmux \
 
 #openai baseline
 RUN  git clone https://github.com/openai/baselines.git \
-  && cd baselines
-  && pip3.6 install -e .
+  && cd baselines \
+  && pip3.6 install -e . \
   && cd ..
 
 CMD mkdir /root/code/notebooks
