@@ -49,7 +49,20 @@ RUN pip3 install --no-input jupyter \
   && apt install -y python3-tk \
   && apt install -y python-opengl \
   && apt install -y vim
- 
+  
+#A2C
+RUN apt install -y tmux \
+  && apt install -y libopenmpi-dev \
+  && pip3.6 install mpi4py \
+  && pip3.6 install tensorflow \
+  && pip3.6 install tensorboardX
+
+#openai baseline
+RUN  git clone https://github.com/openai/baselines.git \
+  && cd baselines
+  && pip3.6 install -e .
+  && cd ..
+
 CMD mkdir /root/code/notebooks
 WORKDIR /root/code
 
