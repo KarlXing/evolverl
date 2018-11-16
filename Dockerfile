@@ -53,9 +53,9 @@ RUN pip3 install --no-input jupyter \
 #A2C
 RUN apt install -y tmux \
   && apt install -y libopenmpi-dev \
-  && pip3.6 install mpi4py \
-  && pip3.6 install tensorflow \
-  && pip3.6 install tensorboardX
+  && pip3 install mpi4py \
+  && pip3 install tensorflow \
+  && pip3 install tensorboardX
 
 CMD mkdir /root/code/notebooks
 WORKDIR /root/code
