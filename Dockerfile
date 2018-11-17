@@ -60,6 +60,14 @@ RUN apt install -y tmux \
 CMD mkdir /root/code/notebooks
 WORKDIR /root/code
 
+#GitPackages
+RUN git clone https://github.com/openai/baselines.git \
+  && cd baselines \
+  && pip3.6 install -e . \
+  && cd .. \
+  && git clone https://github.com/KarlXing/A2C_test.git \
+  && cd ..
+
 #GVGAI
 ENV JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF8
 RUN apt install -y openjdk-9-jdk-headless \
