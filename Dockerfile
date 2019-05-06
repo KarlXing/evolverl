@@ -25,6 +25,12 @@ RUN apt install -y unzip git \
 RUN pip3 install http://download.pytorch.org/whl/cu90/torch-0.4.1-cp36-cp36m-linux_x86_64.whl \
   && pip3 install torchvision
 
+#AWS
+RUN apt install -y zip \
+  && pip3 install --no-input awscli
+  && pip3 install  --no-input awscli-plugin-endpoint
+
+
 #GYM
 RUN pip3 install --no-input gym==0.10.5 \
   && apt install -y swig \
