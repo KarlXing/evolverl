@@ -94,4 +94,4 @@ EXPOSE  5901
 ENV DISPLAY=:1
 COPY run.sh /
 COPY disp_funcs.sh /
-CMD ["/run.sh", "--allow-root"]
+#CMD ["/run.sh", "--allow-root"]
